@@ -56,6 +56,9 @@ ifneq (,$(strip $(wildcard bootable/recovery-twrp/twrp.cpp)))
 RECOVERY_VARIANT := twrp
 endif
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/amazon/omap4-common/releasetools
+
 # Misc.
 BOARD_NEEDS_CUTILS_LOG := true
 
