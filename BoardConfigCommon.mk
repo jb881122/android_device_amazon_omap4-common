@@ -56,6 +56,7 @@ endif
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/amazon/omap4-common/releasetools
+BLOCK_BASED_OTA := true
 
 # Misc.
 BOARD_NEEDS_CUTILS_LOG := true

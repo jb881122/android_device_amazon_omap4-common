@@ -17,7 +17,20 @@
 import sys
 import os
 
+LOCAL_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+RELEASETOOLS_DIR = os.path.abspath(os.path.join(LOCAL_DIR, '../../../build/tools/releasetools'))
+
+# Add releasetools directory to python path
+sys.path.append(RELEASETOOLS_DIR)
+
+import common
+
 def main(argv):
+    args = common.ParseOptions(argv, __doc__)
+    input_dir, output_dir = args
+    # Create a dummy file so releasetools doesn't try creating the patch again
+    with open(os.path.join(output_dir, "SYSTEM", "recovery-from-boot.p"), "wb") as f:
+        f.write(b'')
     sys.exit(0)
 
 if __name__ == '__main__':
